@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccRZzmcX.s 			page 1
+ARM GAS  /tmp/cchb0LDT.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32f4xx_it.c **** 
   30:Core/Src/stm32f4xx_it.c **** /* USER CODE END TD */
-ARM GAS  /tmp/ccRZzmcX.s 			page 2
+ARM GAS  /tmp/cchb0LDT.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** 
@@ -88,7 +88,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
   55:Core/Src/stm32f4xx_it.c **** /* USER CODE END 0 */
   56:Core/Src/stm32f4xx_it.c **** 
   57:Core/Src/stm32f4xx_it.c **** /* External variables --------------------------------------------------------*/
-  58:Core/Src/stm32f4xx_it.c **** extern HCD_HandleTypeDef hhcd_USB_OTG_FS;
+  58:Core/Src/stm32f4xx_it.c **** 
   59:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
   60:Core/Src/stm32f4xx_it.c **** 
   61:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
   77:Core/Src/stm32f4xx_it.c ****   }
   37              		.loc 1 77 3 view .LVU2
   75:Core/Src/stm32f4xx_it.c ****   {
-ARM GAS  /tmp/ccRZzmcX.s 			page 3
+ARM GAS  /tmp/cchb0LDT.s 			page 3
 
 
   38              		.loc 1 75 10 view .LVU3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
   98:Core/Src/stm32f4xx_it.c ****   */
   99:Core/Src/stm32f4xx_it.c **** void MemManage_Handler(void)
  100:Core/Src/stm32f4xx_it.c **** {
-ARM GAS  /tmp/ccRZzmcX.s 			page 4
+ARM GAS  /tmp/cchb0LDT.s 			page 4
 
 
   75              		.loc 1 100 1 view -0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
  119:Core/Src/stm32f4xx_it.c ****   {
  107              		.loc 1 119 9 view .LVU15
  108 0000 FEE7     		b	.L8
-ARM GAS  /tmp/ccRZzmcX.s 			page 5
+ARM GAS  /tmp/cchb0LDT.s 			page 5
 
 
  109              		.cfi_endproc
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
  144              		.loc 1 145 1 view -0
  145              		.cfi_startproc
  146              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccRZzmcX.s 			page 6
+ARM GAS  /tmp/cchb0LDT.s 			page 6
 
 
  147              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
  169:Core/Src/stm32f4xx_it.c ****   */
  170:Core/Src/stm32f4xx_it.c **** void PendSV_Handler(void)
  171:Core/Src/stm32f4xx_it.c **** {
-ARM GAS  /tmp/ccRZzmcX.s 			page 7
+ARM GAS  /tmp/cchb0LDT.s 			page 7
 
 
  182              		.loc 1 171 1 view -0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
  218              		.section	.text.EXTI0_IRQHandler,"ax",%progbits
  219              		.align	1
  220              		.global	EXTI0_IRQHandler
-ARM GAS  /tmp/ccRZzmcX.s 			page 8
+ARM GAS  /tmp/cchb0LDT.s 			page 8
 
 
  221              		.syntax unified
@@ -464,92 +464,37 @@ ARM GAS  /tmp/ccRZzmcX.s 			page 1
  241 0008 08BD     		pop	{r3, pc}
  242              		.cfi_endproc
  243              	.LFE143:
- 245              		.section	.text.OTG_FS_IRQHandler,"ax",%progbits
- 246              		.align	1
- 247              		.global	OTG_FS_IRQHandler
- 248              		.syntax unified
- 249              		.thumb
- 250              		.thumb_func
- 252              	OTG_FS_IRQHandler:
- 253              	.LFB144:
- 214:Core/Src/stm32f4xx_it.c **** 
- 215:Core/Src/stm32f4xx_it.c **** /**
- 216:Core/Src/stm32f4xx_it.c ****   * @brief This function handles USB On The Go FS global interrupt.
- 217:Core/Src/stm32f4xx_it.c ****   */
- 218:Core/Src/stm32f4xx_it.c **** void OTG_FS_IRQHandler(void)
- 219:Core/Src/stm32f4xx_it.c **** {
-ARM GAS  /tmp/ccRZzmcX.s 			page 9
-
-
- 254              		.loc 1 219 1 is_stmt 1 view -0
- 255              		.cfi_startproc
- 256              		@ args = 0, pretend = 0, frame = 0
- 257              		@ frame_needed = 0, uses_anonymous_args = 0
- 258 0000 08B5     		push	{r3, lr}
- 259              	.LCFI2:
- 260              		.cfi_def_cfa_offset 8
- 261              		.cfi_offset 3, -8
- 262              		.cfi_offset 14, -4
- 220:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN OTG_FS_IRQn 0 */
- 221:Core/Src/stm32f4xx_it.c **** 
- 222:Core/Src/stm32f4xx_it.c ****   /* USER CODE END OTG_FS_IRQn 0 */
- 223:Core/Src/stm32f4xx_it.c ****   HAL_HCD_IRQHandler(&hhcd_USB_OTG_FS);
- 263              		.loc 1 223 3 view .LVU33
- 264 0002 0248     		ldr	r0, .L20
- 265 0004 FFF7FEFF 		bl	HAL_HCD_IRQHandler
- 266              	.LVL2:
- 224:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN OTG_FS_IRQn 1 */
- 225:Core/Src/stm32f4xx_it.c **** 
- 226:Core/Src/stm32f4xx_it.c ****   /* USER CODE END OTG_FS_IRQn 1 */
- 227:Core/Src/stm32f4xx_it.c **** }
- 267              		.loc 1 227 1 is_stmt 0 view .LVU34
- 268 0008 08BD     		pop	{r3, pc}
- 269              	.L21:
- 270 000a 00BF     		.align	2
- 271              	.L20:
- 272 000c 00000000 		.word	hhcd_USB_OTG_FS
- 273              		.cfi_endproc
- 274              	.LFE144:
- 276              		.text
- 277              	.Letext0:
- 278              		.file 2 "/usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h"
- 279              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 280              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 281              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h"
- 282              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h"
- 283              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 284              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccRZzmcX.s 			page 10
+ 245              		.text
+ 246              	.Letext0:
+ 247              		.file 2 "/usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h"
+ 248              		.file 3 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 249              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cchb0LDT.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_it.c
-     /tmp/ccRZzmcX.s:21     .text.NMI_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:27     .text.NMI_Handler:00000000 NMI_Handler
-     /tmp/ccRZzmcX.s:44     .text.HardFault_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-     /tmp/ccRZzmcX.s:67     .text.MemManage_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-     /tmp/ccRZzmcX.s:90     .text.BusFault_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-     /tmp/ccRZzmcX.s:113    .text.UsageFault_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-     /tmp/ccRZzmcX.s:136    .text.SVC_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:142    .text.SVC_Handler:00000000 SVC_Handler
-     /tmp/ccRZzmcX.s:155    .text.DebugMon_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-     /tmp/ccRZzmcX.s:174    .text.PendSV_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-     /tmp/ccRZzmcX.s:193    .text.SysTick_Handler:00000000 $t
-     /tmp/ccRZzmcX.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-     /tmp/ccRZzmcX.s:219    .text.EXTI0_IRQHandler:00000000 $t
-     /tmp/ccRZzmcX.s:225    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-     /tmp/ccRZzmcX.s:246    .text.OTG_FS_IRQHandler:00000000 $t
-     /tmp/ccRZzmcX.s:252    .text.OTG_FS_IRQHandler:00000000 OTG_FS_IRQHandler
-     /tmp/ccRZzmcX.s:272    .text.OTG_FS_IRQHandler:0000000c $d
+     /tmp/cchb0LDT.s:21     .text.NMI_Handler:00000000 $t
+     /tmp/cchb0LDT.s:27     .text.NMI_Handler:00000000 NMI_Handler
+     /tmp/cchb0LDT.s:44     .text.HardFault_Handler:00000000 $t
+     /tmp/cchb0LDT.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+     /tmp/cchb0LDT.s:67     .text.MemManage_Handler:00000000 $t
+     /tmp/cchb0LDT.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+     /tmp/cchb0LDT.s:90     .text.BusFault_Handler:00000000 $t
+     /tmp/cchb0LDT.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+     /tmp/cchb0LDT.s:113    .text.UsageFault_Handler:00000000 $t
+     /tmp/cchb0LDT.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+     /tmp/cchb0LDT.s:136    .text.SVC_Handler:00000000 $t
+     /tmp/cchb0LDT.s:142    .text.SVC_Handler:00000000 SVC_Handler
+     /tmp/cchb0LDT.s:155    .text.DebugMon_Handler:00000000 $t
+     /tmp/cchb0LDT.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+     /tmp/cchb0LDT.s:174    .text.PendSV_Handler:00000000 $t
+     /tmp/cchb0LDT.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+     /tmp/cchb0LDT.s:193    .text.SysTick_Handler:00000000 $t
+     /tmp/cchb0LDT.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/cchb0LDT.s:219    .text.EXTI0_IRQHandler:00000000 $t
+     /tmp/cchb0LDT.s:225    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
 
 UNDEFINED SYMBOLS
 HAL_IncTick
 HAL_GPIO_EXTI_IRQHandler
-HAL_HCD_IRQHandler
-hhcd_USB_OTG_FS
