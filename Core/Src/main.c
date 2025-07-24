@@ -1,36 +1,90 @@
 #include "main.h"
+#include "stm32f4xx_hal.h"
+
+
+TIM_HandleTypeDef htim2;
+
+
+volatile uint8_t debounce_flag = 0;
+int ToggleTime = 0;
+int permision_Toggle = 0;
+int last_time = 0;
+int TogglePin_Count = 0;
+
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_TIM2_Init(void);
 
-int y = 0;
+
+// Toggle Pin function
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    y++;
-    if (GPIO_Pin == GPIO_PIN_0)
+    if (GPIO_Pin == GPIO_PIN_0 && ToggleTime - last_time > 3)
     {
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+        TogglePin_Count++;
         HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+    }
+    last_time = ToggleTime;
+}
+
+
+// Debouncing Toggle Pin
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    permision_Toggle++;
+    if (permision_Toggle == 1)
+    {
+        ToggleTime++;
+        permision_Toggle = 0;
     }
 }
 
+
+void TIM2_IRQHandler(void)
+{
+    HAL_TIM_IRQHandler(&htim2);
+}
+
+
+static void MX_TIM2_Init(void)
+{
+    __HAL_RCC_TIM2_CLK_ENABLE();
+
+    TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+    htim2.Instance = TIM2;
+    htim2.Init.Prescaler = 8400 - 1;
+    htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+    htim2.Init.Period = 1000 - 1;
+    htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+    if (HAL_TIM_Base_Init(&htim2) != HAL_OK) Error_Handler();
+
+    sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+    if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK) Error_Handler();
+
+    HAL_NVIC_SetPriority(TIM2_IRQn, 1, 0);
+    HAL_NVIC_EnableIRQ(TIM2_IRQn);
+}
+
+
 int main(void)
 {
-  HAL_Init();
-  SystemClock_Config();
-  MX_GPIO_Init();
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_TIM2_Init();
+    HAL_TIM_Base_Start_IT(&htim2);
 
-int x = 0;
-  while (1)
-  {
-     x++;
-     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
-     HAL_GPIO_TogglePin(GPIOD, x);
-  }
+    while (1)
+    {
+        // when you can toggle again
+        if (ToggleTime - last_time > 3){
+        HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+        }
+    }
 }
+
 
 void SystemClock_Config(void)
 {
